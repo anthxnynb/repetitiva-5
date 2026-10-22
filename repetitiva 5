@@ -1,0 +1,61 @@
+Algoritmo Costo_Total_Viaje()
+//Declaraciones de variables
+    Definir distancia, consumo, precioLitro Como Real
+    Definir litros, costoCombustible, costoPeajes, costoTotal Como Real
+    Definir numPeajes, i Como Entero
+    Definir costoPeaje Como Real
+//Control de variables
+    Escribir ¨Ingrese la distancia recorridad en km:¨
+    Leer distancia
+    Mientras distancia <= 0 Hacer
+        Escribir "Error: la distancia debe ser mayor que cero."
+        Leer distancia
+    FinMientras
+
+    Escribir "Ingrese el consumo del auto en km por litro:"
+    Leer consumo
+    Mientras consumo <= 0 Hacer
+        Escribir "Error: el consumo debe ser mayor que cero."
+        Leer consumo
+    FinMientras
+
+    Escribir "Ingrese el precio del combustible por litro:"
+    Leer precioLitro
+    Mientras precioLitro < 0 Hacer
+        Escribir "Error: el precio no puede ser negativo."
+        Leer precioLitro
+    FinMientras
+
+    Escribir "Ingrese el numero de peajes:"
+    Leer numPeajes
+    Mientras numPeajes < 0 Hacer
+        Escribir "Error: el numero de peajes no puede ser negativo."
+        Leer numPeajes
+    FinMientras
+
+    litros = distancia / consumo
+    costoCombustible = litros * precioLitro
+    costoPeajes = 0
+    i = 1
+
+    Mientras i <= numPeajes Hacer
+        Escribir "Ingrese el costo del peaje ", i, ":"
+        Leer costoPeaje
+
+        Mientras costoPeaje < 0 Hacer
+            Escribir "Error: el costo no puede ser negativo."
+            Escribir "Ingrese nuevamente el costo del peaje:"
+            Leer costoPeaje
+        FinMientras
+
+        costoPeajes = costoPeajes + costoPeaje
+        i = i + 1
+    FinMientras
+
+    costoTotal = costoCombustible + costoPeajes
+
+    Escribir Litros necesarios: ", litros
+    Escribir  Costo del combustible: $", costoCombustible
+    Escribir "Costo total de peajes: $", costoPeajes
+    Escribir "Costo total del viaje: $", costoTotal
+FinAlgoritmo
